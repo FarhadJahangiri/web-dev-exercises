@@ -7,14 +7,17 @@ if (!(appDiv instanceof HTMLDivElement)) {
 	throw new Error("No div with id 'app' found");
 }
 
-function RandomTitle(App) {
+interface RandomTitleProps {
+	titles: string[];
+}
+
+function RandomTitle(props: RandomTitleProps) {
     const [title, newTitle] = React.useState("Click For New Title");
 
-    const { titles } = App;
     return (
         <main>
             <p>{title}</p>
-            <button onClick={() => newTitle(titles[Math.floor(Math.random()*titles.length)])}>
+            <button onClick={() => newTitle(props.titles[Math.floor(Math.random()*props.titles.length)])}>
                 New Title
             </button>
         </main>
