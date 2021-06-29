@@ -13,7 +13,7 @@ if (!(appDiv instanceof HTMLDivElement)) {
 // TODO: Write your React app ;)
 const App = () => <HashRouter>
 	<Switch>
-		<Route path="/product"><Product/></Route>
+		<Route path="/product/:id"><Product/></Route>
 		<Route path="/"><ProductsList/></Route>	
 	</Switch>
 </HashRouter>;
